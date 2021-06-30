@@ -1,0 +1,46 @@
+<div class="row">
+  <form class="col s8 offset-s8" name="newProduct" action="/seller" method="POST" id='createAdd'>
+
+    <div class="cont">
+
+      <div class="new-product-container">
+        {{#if message}}
+        <h1 class='erorMessage'>{{message}}</h1>
+        {{/if}}
+        <input type="text" class="validate" name="title">
+        <label for="title">Название</label>
+        <br>
+        <input type="text" class="validate" name="price">
+        <label for="price">Цена</label>
+        <br>
+    
+        <textarea id="body-textarea" name="description" tabindex="2"
+          class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2" placeholder="Описание"></textarea>
+        <label for="description" class="block mar-b-1">Описание:</label>
+        {{!-- <input type="textarea" class="validate" name="description">
+        <label for="description">Описание</label> --}}
+        <br>
+        <input type="text" class="validate" name="region">
+        <label for="region">Город</label>
+        <br>
+        <input type="text" class="validate" name="image">
+        <label for="image">Ссылка на картинку</label>
+        <div class='radio-container'>
+        {{#each categoriesArr}}
+        <p>
+          <label>
+            <input name="category" type="radio" class='radio-input' value={{this.title}}>
+            <span>{{this.title}}</span>
+          </label>
+        </p>
+        {{/each}}
+        </div>
+      <br>
+      <br>
+      </div>
+      <button class="waves-effect waves-light btn" id='addbtninform'>Создать объявление!</button>
+    </div>
+
+
+  </form>
+</div>
