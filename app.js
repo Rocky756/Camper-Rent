@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 // Подключаем middleware, которое позволяет читать переменные JavaScript, сохранённые в формате JSON в body HTTP-запроса.
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'upload')));
 const sessionConfig = {
   secret: process.env.SECRET,
   resave: false,
@@ -43,7 +44,6 @@ app.use(session(sessionConfig));
 
 app.use('/', indexRouter);
 app.use('/user', userRouter);
-app.use
 console.log('Я в app.js');
 app.use('/seller', sellerRouter); 
 

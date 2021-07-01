@@ -1,5 +1,4 @@
 <script defer src="/js/adminClient.js"></script>
-<div id='mainContainer'>
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -15,7 +14,7 @@
     </div>
   </section>
   <div class="album py-5 bg-light">
-    <div class="container" id='container'>
+    <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id='addContainer'>
       {{#each adds}}
@@ -31,7 +30,7 @@
               Права категории: {{this.driverLicense}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="/seller/{{this._id}}" id='toAdd'><button id='/seller/{{this._id}}' type="button" class="btn btn-sm btn-outline-secondary">Открыть</button></a>
+                  <a href="/seller/{{this._id}}" id='toAdd'><button type="button" class="btn btn-sm btn-outline-secondary">Открыть</button></a>
                   {{#if this.statusActive}}
                   <a href="/seller/edit/{{this._id}}" id='toEdit'><button type="button" class="btn btn-sm btn-outline-secondary">Изменить</button></a>
                   <a href="/seller/delete/{{this._id}}" id='addArchive'><button type="button" class="btn btn-sm btn-outline-secondary">В архив</button></a>
@@ -62,4 +61,3 @@
     </p>
     </div>
 </footer>
-</div>

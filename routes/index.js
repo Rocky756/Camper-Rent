@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
     if (seller.password === sha256(password) || seller.status == 'Продавец') {
         req.session.sellerName = seller.login;
         req.session.seller = seller.status;
-        res.redirect('/seller/active');
+        res.redirect('/seller');
     } else if(user.password === sha256(password) || user.status == 'Покупатель') {
         req.session.username = user.login;
         res.redirect('/');
@@ -65,7 +65,7 @@ router.post('/signup', async (req, res) => {
     req.session.seller = seller.status;
     console.log('Сессии -  имя:', req.session.sellerName, 'статус:', req.session.seller );
     // res.redirect('/seller');
-    res.redirect('/seller/active');
+    res.redirect('/seller');
   } else if (status1) {
   // } else if (status == 'Покупатель') {
     console.log('Я в покупателе');

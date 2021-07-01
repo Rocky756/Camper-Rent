@@ -1,69 +1,69 @@
 <main>
-
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">{{add.title}}</h1>
         <p class="lead text-muted">Цена: {{add.price}} руб/сутки</p>
+        <p class="lead text-muted">Описание: {{add.description}}</p>
         <p>
-          <a href="/seller/active" class="btn btn-primary my-2">Назад</a>
-          <a href="/seller/edit/{{add._id}}" class="btn btn-secondary my-2">Изменить</a>
-          {{#if add.statusActive}}
+          <a href="/seller" class="btn btn-primary my-2">Назад</a>
+          {{!-- <a href="/seller/edit/{{add._id}}" id='toEdit' class="btn btn-secondary my-2">Изменить</a> --}}
+          {{!-- {{#if add.statusActive}}
           <a href="/seller/delete/{{add._id}}" class="btn btn-secondary my-2">В архив</a>
           {{else}}
           <a href="/seller/recovery/{{add._id}}" class="btn btn-secondary my-2">Восстановить</a>
-          {{/if}}
+          {{/if}} --}}
         </p>
         <p>
-          <table class="addTable">
+          <table class="table">
           <tbody>
             <tr>
-              <td class='addTD'>Фирма:</td>
-              <td class='addTD'>{{add.specification.brand}}</td>
+              <td class='table-dark'>Фирма:</td>
+              <td class='table-dark'>{{add.brand}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Модель:</td>
-              <td class='addTD'>{{add.specification.model}}</td>
+              <td class='table-dark'>Модель:</td>
+              <td class='table-dark'>{{add.model}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Цвет:</td>
-              <td class='addTD'>{{add.specification.color}}</td>
+              <td class='table-dark'>Цвет:</td>
+              <td class='table-dark'>{{add.color}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Год выпуска:</td>
-              <td class='addTD'>{{add.specification.year}}</td>
+              <td class='table-dark'>Год выпуска:</td>
+              <td class='table-dark'>{{add.year}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Кол-во спальных мест:</td>
-              <td class='addTD'>{{add.specification.sleepingPlace}}</td>
+              <td class='table-dark'>Кол-во спальных мест:</td>
+              <td class='table-dark'>{{add.sleepingPlace}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Страна изготовитель:</td>
-              <td class='addTD'>{{add.specification.country}}</td>
+              <td class='table-dark'>Страна изготовитель:</td>
+              <td class='table-dark'>{{add.country}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Состояние:</td>
-              <td class='addTD'>{{add.specification.condition}}</td>
+              <td class='table-dark'>Состояние:</td>
+              <td class='table-dark'>{{add.condition}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Права категории:</td>
-              <td class='addTD'>{{add.specification.driverLicense}}</td>
+              <td class='table-dark'>Права категории:</td>
+              <td class='table-dark'>{{add.driverLicense}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Место нахождения:</td>
-              <td class='addTD'd>{{add.region}}</td>
+              <td class='table-dark'>Место нахождения:</td>
+              <td class='table-dark'd>{{add.region}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Категория:</td>
-              <td class='addTD'>{{add.category}}</td>
+              <td class='table-dark'>Категория:</td>
+              <td class='table-dark'>{{add.category}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Объявление разместил:</td>
-              <td class='addTD'>{{add.author}}</td>
+              <td class='table-dark'>Объявление разместил:</td>
+              <td class='table-dark'>{{add.author}}</td>
             </tr>
             <tr>
-              <td class='addTD'>Контакты:</td>
-              <td class='addTD'>{{add.contacts}}</td>
+              <td class='table-dark'>Контакты:</td>
+              <td class='table-dark'>{{add.contacts}}</td>
             </tr>
           </tbody>
           </table>

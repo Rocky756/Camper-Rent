@@ -1,57 +1,43 @@
-<script defer src="/js/adminClient.js"></script>
-<div id='mainContainer'>
-<section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Добавить новое объявление продавцу {{sellerName}}</h1>
-        <p id='topSelector'>
-          <a href="/seller/active" class="btn btn-primary my-2" id='toActive'>Активные</a>
-          <a href="/seller/archive" class="btn btn-secondary my-2" id='toArchive'>Архив</a>
-          <a href="/seller/new" class="btn btn-secondary my-2" id='toNew'>Добавить новое</a>
-        </p>
-      </div>
-    </div>
-  </section>
-<form name="newAddForm" action="/seller/active" method="POST" id='addForm'  encType="multipart/form-data">
+<form name="newAddForm" action="/seller/edit/{{add._id}}" method="POST" id='addForm'  encType="multipart/form-data">
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Заголовок</span>
-    <input type="text" class="form-control" name="title" placeholder="Введите заголовок объявления" aria-label="title" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="title" placeholder="{{add.title}}" aria-label="title" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Фирма изготовитель</span>
-    <input type="text" class="form-control" name="brand" placeholder="Введите название фирмы изготовителя" aria-label="brand" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="brand" placeholder="{{add.brand}}" aria-label="brand" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Модель</span>
-    <input type="text" class="form-control" name="model" placeholder="Введите название модели" aria-label="model" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="model" placeholder="{{add.model}}" aria-label="model" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Тип двигателя</span>
-    <input type="text" class="form-control" name="engine" placeholder="Введите тип двигателя (безиновый, дизельный)" aria-label="engine" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="engine" placeholder="{{add.engine}}" aria-label="engine" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Цвет</span>
-    <input type="text" class="form-control" name="color" placeholder="Введите цвет фургона" aria-label="color" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="color" placeholder="{{add.color}}" aria-label="color" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Год изготовления</span>
-    <input type="text" class="form-control" name="year" placeholder="Введите год изготовления фургона" aria-label="year" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="year" placeholder="{{add.year}}" aria-label="year" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Кол-во спальных мест</span>
-    <input type="text" class="form-control" name="sleepingPlace" placeholder="Введите кол-во спальных мест" aria-label="sleepingPlace" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="sleepingPlace" placeholder="{{add.sleepingPlace}}" aria-label="sleepingPlace" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Страна изготовитель</span>
-    <input type="text" class="form-control" name="country" placeholder="Введите страну изготовитель" aria-label="country" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="country" placeholder="{{add.country}}" aria-label="country" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Техническое состояние</span>
-    <input type="text" class="form-control" name="condition" placeholder="Укажите в каком техническом состоянии фургон" aria-label="condition" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="condition" placeholder="{{add.condition}}" aria-label="condition" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Водительское удостоверение</span>
-    <input type="text" class="form-control" name="driverLicense" placeholder="Укажите права какой категории нужны для управления фургоном" aria-label="driverLicense" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="driverLicense" placeholder="{{add.driverLicense}}" aria-label="driverLicense" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Коробка передач</label>
@@ -64,11 +50,11 @@
   </div>
    <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Цена</span>
-    <input type="text" class="form-control" name="price" placeholder="Цена за одни сутки аренды" aria-label="price" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="price" placeholder="{{add.price}}" aria-label="price" aria-describedby="basic-addon1">
   </div>
    <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Номер телефона</span>
-    <input type="text" class="form-control" name="contacts" placeholder="Укажите сфой телефонный номер в формате: +7(999)999-99-99" aria-label="contacts" aria-describedby="basic-addon1">
+    <input type="text" class="form-control" name="contacts" placeholder="{{add.contacts}}" aria-label="contacts" aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect02">Тип фургона</label>
@@ -114,5 +100,3 @@
 </div>
   {{!-- <button type="button" class="btn btn-primary">Primary</button> --}}
 </form>
-</div>
-
