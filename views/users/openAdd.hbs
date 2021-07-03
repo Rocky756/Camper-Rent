@@ -1,3 +1,4 @@
+<script defer src="/js/userClient.js"></script>
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -6,7 +7,8 @@
         <p class="lead text-muted">Цена: {{add.price}} руб/сутки</p>
         <p class="lead text-muted">Описание: {{add.description}}</p>
         <p>
-          <a href="/seller" class="btn btn-primary my-2">Назад</a>
+          <a href="/" class="btn btn-primary my-2">Назад</a>
+           <a href="/user/showselleradd/{{seller._id}}" id='allAddSeller' class="btn btn-primary my-2">Все объявления продавца {{add.author}}</a>
           {{!-- <a href="/seller/edit/{{add._id}}" id='toEdit' class="btn btn-secondary my-2">Изменить</a> --}}
           {{!-- {{#if add.statusActive}}
           <a href="/seller/delete/{{add._id}}" class="btn btn-secondary my-2">В архив</a>
@@ -108,10 +110,7 @@
       </div>
     </div>
   </div>
-  <br>
-  <div class='mapCont'>
-    <div class="map" id="map" style="width: 600px; height: 400px"></div>
-  </div>
+
 </main>
 <footer class="text-muted py-5">
   <div class="container">

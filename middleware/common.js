@@ -26,7 +26,7 @@ const restrictMiddleUser = (req, res, next) => {
   } else {
     res.locals.messNoReg = 'Войдите или зарегистрируйтесь для этого действия';
     res.locals.noRegUser = true;
-    res.redirect('/user/signin');
+    res.redirect('/login');
   }
 };
 const restrictMiddleSeller = (req, res, next) => {
@@ -36,7 +36,7 @@ const restrictMiddleSeller = (req, res, next) => {
   } else {
     res.locals.messNoReg = 'Войдите или зарегистрируйтесь для этого действия';
     res.locals.noRegSeller = true;
-    res.redirect('/user/signin');
+    res.redirect('/login');
   }
 };
 

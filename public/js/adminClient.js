@@ -76,6 +76,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
       })
       const result = await response.text();
       mainContainer.innerHTML = result;
+      var myMap;
+      ymaps.ready(init);
+      function init () {
+          myMap = new ymaps.Map('map', {
+              center: [55.76, 37.64], // Москва
+              zoom: 10
+          },
+          {
+              searchControlProvider: 'yandex#search'
+          });
+          document.getElementById('destroyButton').onclick = function () {
+              // Для уничтожения используется метод destroy.
+              myMap.destroy();
+          };
+
+      }
     }
     if (event.target.parentElement.id == 'toEdit') {
       event.preventDefault();
@@ -92,7 +108,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     if (event.target.parentElement.id == 'addArchive') {
       event.preventDefault();
-      console.log('Успешно на редактирование объявления');
+      console.log('Успешно на архивирование объявления');
       console.log(event.target.parentElement.href);
       const response = await fetch(event.target.parentElement.href, {
         method: 'GET',
@@ -105,7 +121,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     if (event.target.parentElement.id == 'addRecovery') {
       event.preventDefault();
-      console.log('Успешно на редактирование объявления');
+      console.log('Успешно на восстановление объявления');
       console.log(event.target.parentElement.href);
       const response = await fetch(event.target.parentElement.href, {
         method: 'GET',
@@ -127,7 +143,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     if (event.target.parentElement.id == 'addDelete') {
       event.preventDefault();
-      console.log('Успешно на редактирование объявления');
+      console.log('Успешно на удаление объявления');
       console.log(event.target.parentElement.href);
       const response = await fetch(event.target.parentElement.href, {
         method: 'GET',

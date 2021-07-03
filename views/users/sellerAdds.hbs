@@ -1,0 +1,47 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Все объявления продавца {{sellerName}}</h1>
+        <p class="lead text-muted">Всего {{adds.length}} объявлений</p>
+        <p id='topSelector'>
+          <a href="/" class="btn btn-primary my-2" id='toMain'>Назад</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <div id="divContainer">
+    <!-- START THE FEATURETTES -->
+    <div class="album py-5 bg-light">
+      <div class="container" id='container'>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id='addContainer'>
+        {{#each adds}}
+          <div class="col">
+            <div class="card shadow-sm">
+              {{!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns='http://www.w3.org/2000/svg' role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="30%" y="50%" fill="#eceeef" dy=".3em">{{this.title}}</text></svg> --}}
+              <img src="{{this.mainImage}}" alt="" class='imageCard'>
+              <div class="card-body">
+                <p class="card-text"> Название: {{this.title}} <br>
+                Цена: {{this.price}} руб/сутки <br>
+                Год производства: {{this.year}} <br>
+                Кол-во спальных мест: {{this.sleepingPlace}} <br>
+                Права категории: {{this.driverLicense}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="/add/{{this._id}}" id='toChosenAdd'><button type="button" class="btn btn-sm btn-outline-secondary">Открыть</button></a>
+                  </div>
+                  <small class="text-muted">Дата добавления: {{this.createdAt}}</small>
+                  <a href=""><div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                    </svg>
+                  </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>

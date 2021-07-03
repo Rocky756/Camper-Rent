@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
     {{!-- <script defer src="/js/adminClient.js"></script>         --}}
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=8e34f4d4-0180-458a-bd27-a195cda08d2a&lang=ru_RU" type="text/javascript">
+    </script>
   <title>Camper Rent</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
       {{#if username}}
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="#" class="nav-link px-2 text-white">{{username}}</a></li>
-        <li><a href="#" class="nav-link px-2 text-secondary">Объявления</a></li>
+        <li><a href="/" class="nav-link px-2 text-secondary">Объявления</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Поиск на карте</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Избранное</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Мои брони</a></li>
